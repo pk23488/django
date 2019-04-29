@@ -47,5 +47,5 @@ urlpatterns = [
 
 urlpatterns = [
 	path('admin/',admin.site.urls),    # django1* 的语句是(r'^admin/', include('django.contrib.admin.urls'))
-	path('search/',views.search)
+	path('search/',views.search)       # 注意文件路径
 ]     # 该模块是管理的url模块

@@ -28,6 +28,7 @@ import datetime
 from django.shortcuts import render_to_response
 from django.db.models import Q
 from books.models import Book
+from django.apps.forms import ContactForm
 
 def current_datetime(request):
     now = datetime.datetime.now()
@@ -56,4 +57,3 @@ def search(request):
         "query": query
     })
 
-	
