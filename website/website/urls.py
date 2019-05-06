@@ -41,9 +41,33 @@ urlpatterns = [
     re_path('time/plus/(\d{1,2})/', views.hours_ahead),    
 ]'''
 
-'''rlpatterns = [
+'''urlpatterns = [
 	path('time/', views.current_datetime), 
 ]'''
+
+'''from django.conf.urls.defaults import *
+from mysite.views import current_datetime, hours_ahead, hours_behind, now_in_chicago, now_in_london
+
+urlpatterns = patterns('',
+    ('time/', current_datetime),
+    ('time/plus/(\d{1,2})/', hours_ahead),
+    ('time/minus/(\d{1,2})/', hours_behind),
+    ('time/in_chicago/', now_in_chicago),
+    ('time/in_london/', now_in_london),
+)
+
+'''
+''' 上面的url配置和下面的url配置是一样的，上面的配置的缺点是如果是导入多个函数，就要在代码前面一直导入，比较繁琐，
+	下面的采用的是字符串技术，只要在url配置里面加一个参数，这样就不需要在前面导入，还有一点注意此处参数两边引号
+from django.conf.urls.defaults import *
+
+urlpatterns = patterns('website.views',
+    ('time/', 'website.views.current_datetime'),
+    ('time/plus/(\d{1,2})/', 'website.views.hours_ahead'),
+    ('time/minus/(\d{1,2})/', 'website.views.hours_behind'),
+    ('time/in_chicago/', 'website.views.now_in_chicago'),
+    ('time/in_london/', 'website.views.now_in_london'),
+)'''
 
 urlpatterns = [
 	path('admin/',admin.site.urls),    # django1* 的语句是(r'^admin/', include('django.contrib.admin.urls'))
