@@ -1,0 +1,13 @@
+1、将django下面的script加入系统的环境变量之后，利用django-admin.py startproject website 创建一个website的工程
+
+2、manage.py startapp book创建一个book的网站（可以忽略，此网站主要是为了练习数据库）
+
+3、修改了website下的文件：setting.py、urls.py
+
+4、在website（book）下面的views.py里面定义个视图函数：publisher、book等
+
+5、创建（数据）模板：templates/*.html
+
+6、修改book下的views.py
+
+7、python manage.py runserver
